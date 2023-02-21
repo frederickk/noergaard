@@ -7,10 +7,10 @@
 -- See README for details
 -- 
 
-engine.name = 'PolyPerc'
+engine.name = "PolyPerc"
 
 local music_util = require "musicutil"
-local ui = include("lib/core/ui")
+local ui = include "lib/core/ui"
 local keys = include("lib/core/keys")
 local noergaard = include("lib/noergaard")
 
@@ -100,8 +100,8 @@ end
 
 --- Create params.
 local function init_params()
-  ui.add_page_params(default_val) 
-
+  ui.add_page_params() 
+  
   params:add_separator()
 
   -- wrapper for listening to and setting global BPM

@@ -8,7 +8,7 @@
 local music_util = require "musicutil"
 
 
-local VERSION = "0.1.0"
+local VERSION = "0.1.1"
 
 local OCTAVE_OPTIONS = {"Natural", "-2", "-1", "0", "1", "2", "3", "4", "5", "6", "7", "8"}
 

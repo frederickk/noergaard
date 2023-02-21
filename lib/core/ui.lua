@@ -28,7 +28,10 @@ function init()
   screen.aa(0)
   screen.ping()
 
-  UI.add_page_params() 
+  -- TODO(frederickk) fix library so that it supports default instatiation of 
+  -- paramater adding, while not causing "parameter ID collision" error when 
+  -- user calls "ui.add_page_params()" in the script.
+  -- UI.add_page_params()
   
   --- Init Metro to handle screen redraw
   counter = metro.init()
@@ -44,26 +47,26 @@ function UI.update() end
 --- Add params for Page
 -- @param default_val number:
 function UI.add_page_params(default_val) 
-  params:add_number("page", "Page", UI.FIRST_PAGE - 1, UI.LAST_PAGE + 1, (default_val or 1))
-  params:hide("page")
+  params:add_number("ui-page", "Page", UI.FIRST_PAGE - 1, UI.LAST_PAGE + 1, (default_val or 1))
+  params:hide("ui-page")
   params:add_separator()
 end
 
 --- Sets Page parameter value as delta
 -- @param val number:
 function UI.page_delta(val)
-  params:delta("page", val)
+  params:delta("ui-page", val)
 
-  if (params:get("page") > UI.LAST_PAGE) then
-    params:set("page", UI.FIRST_PAGE)
-  elseif (params:get("page") < UI.FIRST_PAGE) then
-    params:set("page", UI.LAST_PAGE)
+  if (params:get("ui-page") > UI.LAST_PAGE) then
+    params:set("ui-page", UI.FIRST_PAGE)
+  elseif (params:get("ui-page") < UI.FIRST_PAGE) then
+    params:set("ui-page", UI.LAST_PAGE)
   end
 end
 
 --- Returns current page number.
 function UI.page_get()
-  return params:get("page")
+  return params:get("ui-page")
 end
 
 --- Toggles the brightness of an element based on page.
@@ -72,7 +75,7 @@ end
 -- @param off number:  brightnless level for "off" state
 function UI.highlight(page_nums, on, off)
   for i = 1, #page_nums do
-    if params:get("page") == page_nums[i] then
+    if params:get("ui-page") == page_nums[i] then
       screen.level((on or UI.ON))
       break
     else

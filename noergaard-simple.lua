@@ -9,7 +9,7 @@
 -- infinitely
 -- 
 
-engine.name = 'PolyPerc'
+engine.name = "PolyPerc"
 
 local noergaard = include("lib/noergaard")
 

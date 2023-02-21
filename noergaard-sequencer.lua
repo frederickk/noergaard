@@ -7,7 +7,7 @@
 -- See README for details
 -- 
 
-engine.name = 'PolyPerc'
+engine.name = "PolyPerc"
 
 local music_util = require "musicutil"
 local ui = include("lib/core/ui")
@@ -91,7 +91,7 @@ end
 
 --- Create params.
 local function init_params()
-  ui.add_page_params(default_val) 
+  ui.add_page_params() 
 
   params:add_separator()
 

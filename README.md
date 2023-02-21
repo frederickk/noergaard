@@ -1,6 +1,8 @@
 Nørgård
 ------
 
+v0.1.1
+
 **A small library to generate Nørgård infinity sequences for [Norns](https://monome.org/norns).**
 
 Thank you to [Ezra Buchla](https://llllllll.co/t/composition-toolkit-blog-generative-techniques/35657/9) for his lua Nørgård algorithm and [Lawton Hall](https://llllllll.co/u/_greathorned) for his Nørgård [SuperCollider algorithms](https://www.lawtonhall.com/blog/2019/9/9/per-nrgrds-infinity-series).
